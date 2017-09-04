@@ -18,14 +18,6 @@ public class JokeEndpoint {
 
     @ApiMethod(name = "getJoke")
     public JokeBean getJoke() {
-
-        //Simulate remote backend
-        try {
-            Thread.sleep(1500); //1.5 seconds
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         JokeBean response = new JokeBean();
         response.setData(new JokeSupplier().getAJoke());
         return response;
